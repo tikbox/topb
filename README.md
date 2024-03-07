@@ -5,7 +5,7 @@
 ## Installation
 
 ```bash
-go install github.com/your-username/topb@latest
+  go install github.com/tikbox/topb@latest
 ```
 
 ## Usage
@@ -17,7 +17,7 @@ In your Go source file, add the following comments for the structs that need to 
 //
 //go:generate topb -in user.go
 type User struct {
-...
+    ...
 }
 ```
 
@@ -38,7 +38,7 @@ Suppose you have the following struct definition:
 //
 //go:generate topb -in user.go
 type User struct {
-Model
+    Model
 
     ID        uint32 `protobuf:"varint,1,opt,name=id" json:"id" gorm:"index;comment:'User ID'"`
     Name      string `protobuf:"bytes,2,opt,name=name" json:"name" gorm:"comment:'User name'"`
@@ -53,13 +53,11 @@ Model
 
 package main
 
-import "github.com/tikbox/topb/pb"
-
 func (m *User) ToPb() *pb.User {
-return &pb.User{
-Id:   m.ID,
-Name: m.Name,
-}
+    return &pb.User{
+        Id:   m.ID,
+        Name: m.Name,
+    }
 }
 ```
 
@@ -96,9 +94,8 @@ If you don't want to generate `ToPb` methods for certain files, you can use the 
 
 ```go
 // gen:topb
-// gen:topb,exclude
 type User struct {
-...
+    ...
 }
 ```
 
@@ -144,7 +141,7 @@ If you have any other suggestions or requirements, feel free to bring them up fo
 
 Thanks to the following people for contributing to the **topb** project:
 
-- [Your Name](https://github.com/your-username)
+- [Tik Box](https://github.com/tikbox)
 
 ## License
 
