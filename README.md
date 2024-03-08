@@ -5,7 +5,7 @@
 ## Installation
 
 ```bash
-  go get github.com/tikbox/topb@latst
+  go get github.com/tikbox/topb@latest
 ```
 
 ## Usage
